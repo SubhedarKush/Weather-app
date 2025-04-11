@@ -193,3 +193,59 @@ condition-item span{
     height: 180px;
     width: fit-content;
 }
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .main-container {
+    width: 80vw;
+    height: auto;
+    padding: 20px;
+  }
+
+  .weather-summary-img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .forecast-items-container {
+    gap: 10px;
+  }
+
+  .forecast-item {
+    min-width: 60px;
+    padding: 8px;
+  }
+}
+
+/* For phones */
+@media (max-width: 480px) {
+  .main-container {
+    width: 90vw;
+    padding: 15px;
+  }
+
+  .location-date-container,
+  .weather-summary-container,
+  .weather-condition-container {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .weather-summary-info {
+    text-align: start;
+  }
+
+  .weather-summary-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .condition-item span {
+    font-size: 20px;
+  }
+
+  .section-message {
+    margin-top: 15%;
+  }
+}
