@@ -40,7 +40,7 @@ body::before{
 .main-container{
    border: solid transparent;
    
-   width: 25vw;
+   width: 22vw;
    height: 70vh;
    z-index: 1;
    background: linear-gradient(to top, rgb(0, 0, 0, 0.15), rgb(255, 255, 255, 0.15));
@@ -124,7 +124,7 @@ body::before{
 .weather-condition-container{
     display: flex;
     justify-content: space-between;
-
+    margin-bottom: 15px;
 }
 
 .condition-item{
@@ -138,12 +138,15 @@ condition-item span{
     font-size: 30px;
 }
 
-.forecast-items-container{
+.forecast-items-container {
     display: flex;
     gap: 15px;
-    overflow: scroll;
+    overflow-x: auto;
+    overflow-y: hidden;
     padding-bottom: 12px;
+    margin-top: 25px; /* add space from above */
 }
+
 
 .forecast-items-container::-webkit-scrollbar{
     height: 8px;
@@ -194,58 +197,61 @@ condition-item span{
     width: fit-content;
 }
 
+
+
 /* For tablets and smaller screens */
 @media (max-width: 768px) {
-  .main-container {
-    width: 80vw;
-    height: auto;
-    padding: 20px;
+    .main-container {
+      width: 80vw;
+      height: auto;
+      padding: 20px;
+    }
+  
+    .weather-summary-img {
+      width: 80px;
+      height: 80px;
+    }
+  
+    .forecast-items-container {
+      gap: 10px;
+    }
+  
+    .forecast-item {
+      min-width: 60px;
+      padding: 8px;
+    }
   }
-
-  .weather-summary-img {
-    width: 80px;
-    height: 80px;
+  
+  /* For phones */
+  @media (max-width: 480px) {
+    .main-container {
+      width: 90vw;
+      padding: 15px;
+    }
+  
+    .location-date-container,
+    .weather-summary-container,
+    .weather-condition-container {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
+  
+    .weather-summary-info {
+      text-align: start;
+    }
+  
+    .weather-summary-img {
+      width: 60px;
+      height: 60px;
+    }
+  
+    .condition-item span {
+      font-size: 20px;
+    }
+  
+    .section-message {
+      margin-top: 15%;
+    }
   }
-
-  .forecast-items-container {
-    gap: 10px;
-  }
-
-  .forecast-item {
-    min-width: 60px;
-    padding: 8px;
-  }
-}
-
-/* For phones */
-@media (max-width: 480px) {
-  .main-container {
-    width: 90vw;
-    padding: 15px;
-  }
-
-  .location-date-container,
-  .weather-summary-container,
-  .weather-condition-container {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .weather-summary-info {
-    text-align: start;
-  }
-
-  .weather-summary-img {
-    width: 60px;
-    height: 60px;
-  }
-
-  .condition-item span {
-    font-size: 20px;
-  }
-
-  .section-message {
-    margin-top: 15%;
-  }
-}
+  
